@@ -1688,6 +1688,15 @@ class Parsedown
 
     protected function element(array $Element)
     {
+
+        # https://github.com/erusev/parsedown/pull/285#issuecomment-348986026
+        if (in_array($Element['name'],['h1','h2','h3','h4','h5','h6']))
+        {
+            $Element['attributes']['id'] = str_replace(' ','-',$Element['text']);
+            # Also add class for right styling.
+            $Element['attributes']['class'] = 'wp-block-heading';
+        }
+
         if ($this->safeMode)
         {
             $Element = $this->sanitiseElement($Element);
