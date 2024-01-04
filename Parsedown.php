@@ -1701,6 +1701,10 @@ class Parsedown
         {
             $Element['attributes']['class'] = 'wp-block-table is-style-stripes';
         }
+        elseif ($Element['name'] == 'blockquote')
+        {
+            $Element['attributes']['class'] = 'wp-block-quote';
+        }
 
         if ($this->safeMode)
         {
