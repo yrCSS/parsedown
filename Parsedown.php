@@ -1696,9 +1696,8 @@ class Parsedown
             # Also add class for right styling.
             $Element['attributes']['class'] = 'wp-block-heading';
         }
-
         # For WP tables
-        if ($Element['name'] == 'table')
+        elseif ($Element['name'] == 'table')
         {
             $Element['attributes']['class'] = 'wp-block-table is-style-stripes';
         }
